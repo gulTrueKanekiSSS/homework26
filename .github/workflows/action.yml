@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "deploy/docker-compose.yaml,deploy/docker_config.py"
+          source: "homework26/docker-compose.yaml,homework26/docker_config.py"
           target: "homework26_ci"
           strip_components: 1
       - name: deploy_app
