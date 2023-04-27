@@ -36,3 +36,12 @@ jobs:
           source: "homework26/docker-compose.yaml,homework26/docker_config.py"
           target: "homework26_ci"
           strip_components: 1
+      - name: homework26_app
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd homework26_ci
+            echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
