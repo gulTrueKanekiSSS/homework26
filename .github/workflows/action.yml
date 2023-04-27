@@ -25,7 +25,7 @@ jobs:
       - name: render_configs
         run: |
           mkdir homework26
-          cat docker-compose-ci.yaml | envsubst > homework26/docker-compose-ci.yaml
+          cat docker-compose-ci.yaml | envsubst > homework26/docker-compose.yaml
           cat docker-ci-config.py | envsubst > homework26/docker_config.py
       - name: copy_files
         uses: appleboy/scp-action@master
