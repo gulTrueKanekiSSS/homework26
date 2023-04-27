@@ -33,10 +33,10 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "homework26/docker-compose.yaml,homework26/docker_config.py"
+          source: "deploy/docker-compose.yaml,deploy/docker_config.py"
           target: "homework26_ci"
           strip_components: 1
-      - name: homework26_app
+      - name: deploy_app
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
